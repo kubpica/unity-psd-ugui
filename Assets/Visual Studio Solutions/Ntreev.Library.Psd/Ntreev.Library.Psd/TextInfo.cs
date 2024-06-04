@@ -1,6 +1,6 @@
 ﻿using Ntreev.Library.Psd.Structures;
 using System.Collections;
-using System;
+using System.Globalization;
 
 namespace Ntreev.Library.Psd
 {
@@ -24,6 +24,7 @@ namespace Ntreev.Library.Psd
             var styleSheetsData = (styleSheet as Properties)["StyleSheetData"] as Properties;
             if (styleSheetsData.Contains("FontSize"))
             {
+                CultureInfo.CurrentCulture = new CultureInfo("en-GB", false);
                 fontSize = (int)(System.Single)styleSheetsData["FontSize"];
             }
             if (styleSheetsData.Contains("Font"))
