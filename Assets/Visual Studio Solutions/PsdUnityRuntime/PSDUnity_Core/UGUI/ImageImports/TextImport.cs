@@ -12,7 +12,7 @@ namespace PSDUnity.UGUI
         [SerializeField] protected TextOverflowModes overflowMode = TextOverflowModes.Overflow;
         public override GameObject CreateTemplate()
         {
-            var text = new GameObject("Text", typeof(TMP_Text)).GetComponent<TMP_Text>();
+            var text = new GameObject("Text", typeof(TextMeshProUGUI)).GetComponent<TextMeshProUGUI>();
             text.alignment = textAnchor;
             text.enableWordWrapping = true;
             text.overflowMode = TextOverflowModes.Overflow;
@@ -22,7 +22,7 @@ namespace PSDUnity.UGUI
         public override UGUINode DrawImage(Data.ImgNode image, UGUINode parent)
         {
             UGUINode node = CreateRootNode(image.Name, AdjustTextRect( image.rect,image.fontSize), parent);
-            var myText = node.InitComponent<TMP_Text>();
+            var myText = node.InitComponent<TextMeshProUGUI>();
             PSDImporterUtility.SetPictureOrLoadColor(image, myText);
             return node;
         }

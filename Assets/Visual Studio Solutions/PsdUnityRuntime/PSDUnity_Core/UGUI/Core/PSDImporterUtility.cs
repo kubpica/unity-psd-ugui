@@ -54,7 +54,7 @@ namespace PSDUnity.UGUI
                     ((UnityEngine.UI.RawImage)graph).texture = image.texture;
                     break;
                 case ImgType.Label:
-                    var myText = (TMP_Text)graph;
+                    var myText = (TextMeshProUGUI)graph;
                     myText.text = image.text;
                     myText.fontSize = image.fontSize;
                     break;
