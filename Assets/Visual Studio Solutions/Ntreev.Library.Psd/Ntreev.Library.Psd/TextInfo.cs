@@ -8,8 +8,14 @@ namespace Ntreev.Library.Psd
     {
         public string text;
         public float[] color;
-        public int fontSize;
+        public float fontSize;
         public string fontName;
+        public int styleRunAlignment;
+        public int fontBaseline;
+        public int baselineDirection;
+        public bool fauxBold;
+        public bool fauxItalic;
+
         public TextInfo(DescriptorStructure text)
         {
             this.text = text["Txt"].ToString();
@@ -25,11 +31,36 @@ namespace Ntreev.Library.Psd
             if (styleSheetsData.Contains("FontSize"))
             {
                 CultureInfo.CurrentCulture = new CultureInfo("en-GB", false);
-                fontSize = (int)(System.Single)styleSheetsData["FontSize"];
+                fontSize = float.Parse(styleSheetsData["FontSize"].ToString());
             }
             if (styleSheetsData.Contains("Font"))
             {
                 fontName = styleSheetsData["Font"] as string;
+            }
+
+            if (styleSheetsData.Contains("StyleRunAlignment"))
+            {
+                styleRunAlignment = int.Parse(styleSheetsData["StyleRunAlignment"].ToString());
+            }
+
+            if (styleSheetsData.Contains("BaselineDirection"))
+            {
+                baselineDirection = int.Parse(styleSheetsData["BaselineDirection"].ToString());
+            }
+
+            if (styleSheetsData.Contains("StyleRunAlignment"))
+            {
+                styleRunAlignment = int.Parse(styleSheetsData["StyleRunAlignment"].ToString());
+            }
+
+            if (styleSheetsData.Contains("FauxItalic"))
+            {
+                fauxItalic = bool.Parse(styleSheetsData["FauxItalic"].ToString());
+            }
+
+            if (styleSheetsData.Contains("FauxBold"))
+            {
+                fauxBold = bool.Parse(styleSheetsData["FauxBold"].ToString());
             }
 
             if (styleSheetsData.Contains("FillColor"))

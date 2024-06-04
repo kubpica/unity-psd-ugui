@@ -1,11 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor.IMGUI.Controls;
-using UnityEditor;
-using System;
 using System.Linq;
+using UnityEditor;
+using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
+using UnityEngine;
 
 namespace PSDUnity
 {
@@ -279,7 +278,7 @@ namespace PSDUnity
             {
                 case ImgType.Label:
                     img.font = EditorGUI.ObjectField(fontRect, img.font, typeof(Font), false) as Font;
-                    img.fontSize = EditorGUI.IntSlider(fontSizeRect, img.fontSize, 1, 100);
+                    img.fontSize = EditorGUI.Slider(fontSizeRect, img.fontSize, 1, 100);
                     img.text = EditorGUI.TextField(textRect, img.text);
                     img.color = EditorGUI.ColorField(colorRect, img.color);
                     break;
