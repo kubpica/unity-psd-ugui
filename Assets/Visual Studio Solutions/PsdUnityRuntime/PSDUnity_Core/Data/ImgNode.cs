@@ -44,7 +44,7 @@ namespace PSDUnity.Data
         public Texture2D texture;
         public string text = "";
         public Font font;
-        public int fontSize = 0;
+        public float fontSize = 0;
         public Color color = UnityEngine.Color.white;
         public ImgNode() { }
 
@@ -60,7 +60,7 @@ namespace PSDUnity.Data
             this.type = ImgType.Color;
             this.color = color;
         }
-        public ImgNode(string name, Rect rect, string font, int fontSize, string text, Color color) : this(rect)
+        public ImgNode(string name, Rect rect, string font, float fontSize, string text, Color color) : this(rect)
         {
             this.type = ImgType.Label;
             this.Name = name;

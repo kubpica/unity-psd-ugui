@@ -1,6 +1,7 @@
 ﻿using Ntreev.Library.Psd.Structures;
 using System.Collections;
 using System.Globalization;
+using UnityEngine;
 
 namespace Ntreev.Library.Psd
 {
@@ -8,7 +9,7 @@ namespace Ntreev.Library.Psd
     {
         public string text;
         public float[] color;
-        public int fontSize;
+        public float fontSize;
         public string fontName;
         public TextInfo(DescriptorStructure text)
         {
@@ -25,7 +26,7 @@ namespace Ntreev.Library.Psd
             if (styleSheetsData.Contains("FontSize"))
             {
                 CultureInfo.CurrentCulture = new CultureInfo("en-GB", false);
-                fontSize = (int)float.Parse(styleSheetsData["FontSize"].ToString());
+                fontSize = float.Parse(styleSheetsData["FontSize"].ToString());
             }
             if (styleSheetsData.Contains("Font"))
             {

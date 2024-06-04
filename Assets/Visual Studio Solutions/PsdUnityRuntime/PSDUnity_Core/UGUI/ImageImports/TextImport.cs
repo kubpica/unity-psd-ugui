@@ -33,7 +33,7 @@ namespace PSDUnity.UGUI
         /// <param name="image"></param>
         /// <param name="fontSize"></param>
         /// <returns></returns>
-        private Rect AdjustTextRect(Rect oldRect,int fontSize)
+        private Rect AdjustTextRect(Rect oldRect, float fontSize)
         {
             var rect = oldRect;
             rect.width += fontSize * textBorder;
