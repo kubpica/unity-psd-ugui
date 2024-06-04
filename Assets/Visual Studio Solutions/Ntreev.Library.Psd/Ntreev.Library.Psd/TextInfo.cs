@@ -25,7 +25,7 @@ namespace Ntreev.Library.Psd
             if (styleSheetsData.Contains("FontSize"))
             {
                 CultureInfo.CurrentCulture = new CultureInfo("en-GB", false);
-                fontSize = (int)(System.Single)styleSheetsData["FontSize"];
+                fontSize = (int)float.Parse(styleSheetsData["FontSize"].ToString());
             }
             if (styleSheetsData.Contains("Font"))
             {
