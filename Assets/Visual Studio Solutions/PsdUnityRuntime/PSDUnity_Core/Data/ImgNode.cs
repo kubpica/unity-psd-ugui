@@ -45,6 +45,9 @@ namespace PSDUnity.Data
         public string text = "";
         public Font font;
         public float fontSize = 0;
+        public int styleRunAlignment;
+        public int fontBaseline;
+        public int baselineDirection;
         public Color color = UnityEngine.Color.white;
         public ImgNode() { }
 
@@ -60,6 +63,7 @@ namespace PSDUnity.Data
             this.type = ImgType.Color;
             this.color = color;
         }
+
         public ImgNode(string name, Rect rect, string font, float fontSize, string text, Color color) : this(rect)
         {
             this.type = ImgType.Label;
@@ -68,6 +72,14 @@ namespace PSDUnity.Data
             this.fontSize = fontSize;
             this.text = text;
             this.color = color;
+        }
+
+        public ImgNode(string name, Rect rect, Ntreev.Library.Psd.TextInfo textInfo, Color color) 
+            : this(name, rect, textInfo.fontName, textInfo.fontSize, textInfo.text, color)
+        {
+            this.styleRunAlignment = textInfo.styleRunAlignment;
+            this.fontBaseline = textInfo.fontBaseline;
+            this.baselineDirection = textInfo.baselineDirection;
         }
 
         private ImgNode(Rect rect)

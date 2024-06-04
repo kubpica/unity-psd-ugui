@@ -354,7 +354,7 @@ namespace PSDUnity.Analysis
                 case LayerType.Text:
                     var textInfo = layer.Records.TextInfo;
                     var color = new Color(textInfo.color[0], textInfo.color[1], textInfo.color[2], textInfo.color[3]);
-                    data = new Data.ImgNode(layer.Name, rect, textInfo.fontName, textInfo.fontSize, textInfo.text, color);
+                    data = new Data.ImgNode(layer.Name, rect, textInfo, color);
                     break;
                 case LayerType.Complex:
                     if (!RuleObj.forceSprite)

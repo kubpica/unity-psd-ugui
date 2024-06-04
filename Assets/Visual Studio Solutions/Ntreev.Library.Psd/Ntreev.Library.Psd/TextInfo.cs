@@ -1,7 +1,6 @@
 ﻿using Ntreev.Library.Psd.Structures;
 using System.Collections;
 using System.Globalization;
-using UnityEngine;
 
 namespace Ntreev.Library.Psd
 {
@@ -11,6 +10,10 @@ namespace Ntreev.Library.Psd
         public float[] color;
         public float fontSize;
         public string fontName;
+        public int styleRunAlignment;
+        public int fontBaseline;
+        public int baselineDirection;
+
         public TextInfo(DescriptorStructure text)
         {
             this.text = text["Txt"].ToString();
@@ -31,6 +34,21 @@ namespace Ntreev.Library.Psd
             if (styleSheetsData.Contains("Font"))
             {
                 fontName = styleSheetsData["Font"] as string;
+            }
+
+            if (styleSheetsData.Contains("StyleRunAlignment"))
+            {
+                styleRunAlignment = int.Parse(styleSheetsData["StyleRunAlignment"].ToString());
+            }
+
+            if (styleSheetsData.Contains("BaselineDirection"))
+            {
+                baselineDirection = int.Parse(styleSheetsData["BaselineDirection"].ToString());
+            }
+
+            if (styleSheetsData.Contains("StyleRunAlignment"))
+            {
+                styleRunAlignment = int.Parse(styleSheetsData["StyleRunAlignment"].ToString());
             }
 
             if (styleSheetsData.Contains("FillColor"))
