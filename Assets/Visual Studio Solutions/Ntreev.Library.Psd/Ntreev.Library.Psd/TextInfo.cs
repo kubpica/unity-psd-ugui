@@ -13,6 +13,8 @@ namespace Ntreev.Library.Psd
         public int styleRunAlignment;
         public int fontBaseline;
         public int baselineDirection;
+        public bool fauxBold;
+        public bool fauxItalic;
 
         public TextInfo(DescriptorStructure text)
         {
@@ -49,6 +51,16 @@ namespace Ntreev.Library.Psd
             if (styleSheetsData.Contains("StyleRunAlignment"))
             {
                 styleRunAlignment = int.Parse(styleSheetsData["StyleRunAlignment"].ToString());
+            }
+
+            if (styleSheetsData.Contains("FauxItalic"))
+            {
+                fauxItalic = bool.Parse(styleSheetsData["FauxItalic"].ToString());
+            }
+
+            if (styleSheetsData.Contains("FauxBold"))
+            {
+                fauxBold = bool.Parse(styleSheetsData["FauxBold"].ToString());
             }
 
             if (styleSheetsData.Contains("FillColor"))

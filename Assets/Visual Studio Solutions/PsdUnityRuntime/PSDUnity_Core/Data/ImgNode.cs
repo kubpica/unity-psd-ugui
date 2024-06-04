@@ -48,6 +48,8 @@ namespace PSDUnity.Data
         public int styleRunAlignment;
         public int fontBaseline;
         public int baselineDirection;
+        public bool fauxBold;
+        public bool fauxItalic;
         public Color color = UnityEngine.Color.white;
         public ImgNode() { }
 
@@ -80,6 +82,8 @@ namespace PSDUnity.Data
             this.styleRunAlignment = textInfo.styleRunAlignment;
             this.fontBaseline = textInfo.fontBaseline;
             this.baselineDirection = textInfo.baselineDirection;
+            this.fauxBold = textInfo.fauxBold;
+            this.fauxItalic = textInfo.fauxItalic;
         }
 
         private ImgNode(Rect rect)

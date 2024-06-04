@@ -60,6 +60,12 @@ namespace PSDUnity.UGUI
                     myText.fontSize = image.fontSize;
                     myText.SetDefault();
 
+                    if (image.fauxBold)
+                        myText.fontStyle = FontStyles.Bold;
+
+                    if (image.fauxItalic)
+                        myText.fontStyle = FontStyles.Italic;
+
                     if (image.styleRunAlignment == 2)
                         myText.alignment = TextAlignmentOptions.MidlineLeft;
                     else
