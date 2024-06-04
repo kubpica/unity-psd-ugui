@@ -55,13 +55,16 @@ namespace PSDUnity.UGUI
                     break;
                 case ImgType.Label:
                     var myText = (TextMeshProUGUI)graph;
+
                     myText.text = image.text;
                     myText.fontSize = image.fontSize;
+                    myText.SetDefault();
 
                     if (image.styleRunAlignment == 2)
                         myText.alignment = TextAlignmentOptions.MidlineLeft;
                     else
                         Debug.LogError("Unknown styleRunAlignment");
+
 
                     Debug.Log($"Text:\"{myText.text}\" fontSize:{myText.fontSize} styleRunAlignment:{image.styleRunAlignment} fontBaseline:{image.fontBaseline} baselineDirection:{image.baselineDirection}");
                     break;
