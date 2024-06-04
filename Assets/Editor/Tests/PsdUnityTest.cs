@@ -1,14 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using NUnit.Framework;
 using UnityEditor;
-using System.Collections.Generic;
-using Ntreev.Library.Psd;
-using System.Linq;
-using System.IO;
-using System;
-using NUnit.Framework;
-using SyntaxTree.VisualStudio.Unity.Bridge;
-using SyntaxTree.VisualStudio.Unity;
+using UnityEngine;
+//using SyntaxTree.VisualStudio.Unity.Bridge;
+//using SyntaxTree.VisualStudio.Unity;
 
 public class PsdUnityTest
 {
@@ -37,6 +31,7 @@ public class PsdUnityTest
     [Test]
     public void SyntaxTreeTest()
     {
-        Project.BuildProject();
+        Debug.LogError("Project.BuildProject(); using SyntaxTree.VisualStudio.Unity.Bridge; using SyntaxTree.VisualStudio.Unity;");
+        //Project.BuildProject();
     }
 }
