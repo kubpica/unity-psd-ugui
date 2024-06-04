@@ -4,6 +4,7 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Dd]ata/
+/[L]ogs/
 
 bin/
 obj/
