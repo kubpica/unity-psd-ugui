@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace PSDUnity.UGUI
 {
@@ -53,7 +54,7 @@ namespace PSDUnity.UGUI
                     ((UnityEngine.UI.RawImage)graph).texture = image.texture;
                     break;
                 case ImgType.Label:
-                    var myText = (UnityEngine.UI.Text)graph;
+                    var myText = (TMP_Text)graph;
                     myText.text = image.text;
                     myText.fontSize = image.fontSize;
                     break;

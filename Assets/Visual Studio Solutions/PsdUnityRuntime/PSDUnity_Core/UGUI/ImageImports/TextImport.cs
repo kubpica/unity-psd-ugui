@@ -1,33 +1,28 @@
-﻿using System;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using System.Collections;
-using System.Collections.Generic;
-using PSDUnity;
 
 namespace PSDUnity.UGUI
 {
     public class TextImport : ImageImport
     {
         [Header("[可选-----------------------------------")]
-        [SerializeField, CustomField("字边距")] protected  float textBorder = 0.6f;//生成Text时,需要一定的边距
-        [SerializeField, CustomField("文字锚点")] protected  TextAnchor textAnchor = TextAnchor.UpperLeft;
-        [SerializeField, CustomField("水平适配")] protected  HorizontalWrapMode text_h_wrapMode = HorizontalWrapMode.Overflow;
-        [SerializeField, CustomField("垂直适配")] VerticalWrapMode text_v_wrapMode = VerticalWrapMode.Truncate;
+        [SerializeField] protected float textBorder = 0.6f;//生成Text时,需要一定的边距
+        [SerializeField] protected TextAlignmentOptions textAnchor = TextAlignmentOptions.TopLeft;
+        [SerializeField] protected bool enableWordWrapping = true;
+        [SerializeField] protected TextOverflowModes overflowMode = TextOverflowModes.Overflow;
         public override GameObject CreateTemplate()
         {
-            var text = new GameObject("Text", typeof(Text)).GetComponent<Text>();
-            text.alignment = textAnchor;// TextAnchor.UpperLeft;
-            text.horizontalOverflow = text_h_wrapMode;// HorizontalWrapMode.Overflow;
-            text.verticalOverflow = text_v_wrapMode;// VerticalWrapMode.Truncate;
+            var text = new GameObject("Text", typeof(TMP_Text)).GetComponent<TMP_Text>();
+            text.alignment = textAnchor;
+            text.enableWordWrapping = true;
+            text.overflowMode = TextOverflowModes.Overflow;
             return text.gameObject;
         }
 
         public override UGUINode DrawImage(Data.ImgNode image, UGUINode parent)
         {
             UGUINode node = CreateRootNode(image.Name, AdjustTextRect( image.rect,image.fontSize), parent);
-            UnityEngine.UI.Text myText = node.InitComponent<Text>();
+            var myText = node.InitComponent<TMP_Text>();
             PSDImporterUtility.SetPictureOrLoadColor(image, myText);
             return node;
         }
