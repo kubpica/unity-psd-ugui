@@ -1,5 +1,12 @@
-## about this project:
-   As a programmer, sometimes I don't have to set up Userinterface first and then program, but it's not my job at all.The UI designer, like me, does not think it's his job, so there must be a program to combine the programmer with the UI designer.I got a lot of inspiration on GitHub, creating a PSDUnity that fully supports unity3d controls, which will change the process of making UI into a complete user interface. And all this will be done inside the unity3d engine
+## About this fork:
+- Updated to Unity 2022.3.24f1
+- Changed culture to en-GB
+- Using TextMeshPro instead of the legacy Text
+- Importing additional parameters like "FauxBold" & "FauxItalic" from .psd to TextMeshProUGUI text
+- Translated ExporterDrawer to English 
+
+## About this project:
+   As a programmer, sometimes I have to set up UI first and then program, but it's not my job at all. The UI designer, also does not think it's his job, so there must be a program to combine the programmer with the UI designer. I got a lot of inspiration on GitHub, creating a PSDUnity that fully supports unity3d controls, which will change the process of making UI into a complete user interface. And all this will be done inside the unity3d engine
 
 ## 1.what this project can help you ?
 
@@ -52,7 +59,7 @@
  * 1.Create a psd file,add some layers Or groups,name it with our document:"图层命名规则.xlsx"
  * 2.Open you unity3d,click menu:"Asset/Create/Psd-Exproter"
  * 3.From generated scriptableObject,select the psd file you created
- * 4.click the button:"转换层级为图片，并记录索引"
+ * 4.click the button:"Convert layers to image and record index"
  * 5.click the button:"Build-All“
  * 6.enjoy yourself
  
