@@ -1,13 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using System.Collections.Generic;
-using UnityEditor;
-using System;
-using Ntreev.Library.Psd;
+﻿using Ntreev.Library.Psd;
 using PSDUnity.Data;
 using PSDUnity.UGUI;
+using System;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.IMGUI.Controls;
+using UnityEngine;
 
 namespace PSDUnity.Analysis
 {
@@ -218,10 +216,10 @@ namespace PSDUnity.Analysis
         {
             using (var hor = new EditorGUILayout.HorizontalScope())
             {
-                EditorGUILayout.LabelField("文档路径:", GUILayout.Width(60));
+                EditorGUILayout.LabelField("PSD path:", GUILayout.Width(60));
                 exporter.psdFile = EditorGUILayout.TextField(exporter.psdFile);
 
-                if (GUILayout.Button("选择", GUILayout.Width(60)))
+                if (GUILayout.Button("Select", GUILayout.Width(60)))
                 {
                     var dir = PlayerPrefs.GetString(Prefs_LastPsdsDir);
 
@@ -235,7 +233,7 @@ namespace PSDUnity.Analysis
                         dir = Application.dataPath;
                     }
 
-                    var path = EditorUtility.OpenFilePanel("选择一个pdf文件", dir, "psd");
+                    var path = EditorUtility.OpenFilePanel("Select a psd file", dir, "psd");
 
                     if (!string.IsNullOrEmpty(path))
                     {
@@ -255,20 +253,20 @@ namespace PSDUnity.Analysis
         {
             using (var hor = new EditorGUILayout.HorizontalScope())
             {
-                GUILayout.Label("使用规则: " + "  [psd文件导出 + ui界面生成]");
+                GUILayout.Label("Rules to use: " + "  [PSD file export + UI interface generation]");
                 exporter.ruleObj = EditorGUILayout.ObjectField(exporter.ruleObj, typeof(RuleObject), false) as RuleObject;
-                if (GUILayout.Button("创建", GUILayout.Width(60)))
+                if (GUILayout.Button("Create", GUILayout.Width(60)))
                 {
-                    if (EditorUtility.DisplayDialog("创建新规则", "确认后将生成新的规则文件！", "确认", "取消"))
+                    if (EditorUtility.DisplayDialog("Create new rule", "A new rule file will be generated after confirmation!", "Confirm", "Cancel"))
                     {
                         exporter.ruleObj = RuleHelper.CreateRuleObject();
                     }
                 }
             }
 
-            if (GUILayout.Button("转换层级为图片，并记录索引", EditorStyles.toolbarButton))
+            if (GUILayout.Button("Convert layers to image and record index", EditorStyles.toolbarButton))
             {
-                if (EditorUtility.DisplayDialog("温馨提示", "重新加载目前将重写以下配制，继续请按确认！", "确认"))
+                if (EditorUtility.DisplayDialog("Warning", "Recording will overwrite the current configuration, please press Confirm to continue!", "Confirm"))
                 {
                     RecordAllPsdInformation();
                     m_TreeView = new ExporterTreeView(m_TreeViewState);
