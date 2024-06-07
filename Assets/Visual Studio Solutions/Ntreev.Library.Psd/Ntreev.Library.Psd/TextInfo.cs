@@ -9,7 +9,9 @@ namespace Ntreev.Library.Psd
         public string text;
         public float[] color;
         public float fontSize;
-        public string fontName;
+        public float tracking;
+        public float leading;
+        public string fontID;
         public int styleRunAlignment;
         public int fontBaseline;
         public int baselineDirection;
@@ -35,7 +37,17 @@ namespace Ntreev.Library.Psd
             }
             if (styleSheetsData.Contains("Font"))
             {
-                fontName = styleSheetsData["Font"] as string;
+                fontID = styleSheetsData["Font"].ToString();
+            }
+
+            if (styleSheetsData.Contains("Leading"))
+            {
+                leading = float.Parse(styleSheetsData["Leading"].ToString());
+            }
+
+            if (styleSheetsData.Contains("Tracking"))
+            {
+                tracking = float.Parse(styleSheetsData["Tracking"].ToString());
             }
 
             if (styleSheetsData.Contains("StyleRunAlignment"))

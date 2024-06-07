@@ -71,8 +71,10 @@ namespace PSDUnity.UGUI
                     else
                         Debug.LogError("Unknown styleRunAlignment");
 
+                    myText.characterSpacing = image.tracking / 10f;
+                    myText.lineSpacing = image.leading / 10f;
 
-                    Debug.Log($"Text:\"{myText.text}\" fontSize:{myText.fontSize} styleRunAlignment:{image.styleRunAlignment} fontBaseline:{image.fontBaseline} baselineDirection:{image.baselineDirection}");
+                    Debug.Log($"Text:\"{myText.text}\" font:{image.fontID} fontSize:{myText.fontSize} styleRunAlignment:{image.styleRunAlignment} fontBaseline:{image.fontBaseline} baselineDirection:{image.baselineDirection} leading:{image.leading}");
                     break;
                 case ImgType.AtlasImage:
                     ((UnityEngine.UI.Image)graph).sprite = image.sprite;

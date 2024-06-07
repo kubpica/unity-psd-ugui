@@ -44,7 +44,10 @@ namespace PSDUnity.Data
         public Texture2D texture;
         public string text = "";
         public Font font;
+        public string fontID;
         public float fontSize = 0;
+        public float tracking;
+        public float leading;
         public int styleRunAlignment;
         public int fontBaseline;
         public int baselineDirection;
@@ -71,19 +74,21 @@ namespace PSDUnity.Data
             this.type = ImgType.Label;
             this.Name = name;
             this.font = null; /*Debug.Log(font);*/
+            this.fontID = font;
             this.fontSize = fontSize;
             this.text = text;
             this.color = color;
         }
 
         public ImgNode(string name, Rect rect, Ntreev.Library.Psd.TextInfo textInfo, Color color) 
-            : this(name, rect, textInfo.fontName, textInfo.fontSize, textInfo.text, color)
+            : this(name, rect, textInfo.fontID, textInfo.fontSize, textInfo.text, color)
         {
             this.styleRunAlignment = textInfo.styleRunAlignment;
             this.fontBaseline = textInfo.fontBaseline;
             this.baselineDirection = textInfo.baselineDirection;
             this.fauxBold = textInfo.fauxBold;
             this.fauxItalic = textInfo.fauxItalic;
+            this.tracking = textInfo.tracking;
         }
 
         private ImgNode(Rect rect)
