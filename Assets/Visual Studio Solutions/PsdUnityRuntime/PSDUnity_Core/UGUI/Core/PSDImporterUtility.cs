@@ -66,10 +66,10 @@ namespace PSDUnity.UGUI
                     if (image.fauxItalic)
                         myText.fontStyle = FontStyles.Italic;
 
-                    if (image.styleRunAlignment == 2)
-                        myText.alignment = TextAlignmentOptions.MidlineLeft;
-                    else
-                        Debug.LogError("Unknown styleRunAlignment");
+                    //if (image.styleRunAlignment == 2)
+                    //    myText.alignment = TextAlignmentOptions.MidlineLeft;
+                    //else
+                    //    Debug.LogError("Unknown styleRunAlignment");
 
                     myText.characterSpacing = image.tracking / 10f;
                     myText.lineSpacing = image.leading / 10f;
